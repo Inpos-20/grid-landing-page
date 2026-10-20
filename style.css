@@ -195,7 +195,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: fixed;
+    position: absolute;
     right: 0;
     width: 30%;
     height: 100%;
@@ -207,6 +207,9 @@ hr {
 
   .container:has(header nav img[state="cross"]) .hero {
     display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .menu h3:hover {
