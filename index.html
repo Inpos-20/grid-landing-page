@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Grid landing page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <h3><span class="dot"></span>Bridge Collective</h3>
+          <img
+            id="menuButton"
+            state="menu"
+            src="assets/images/icon-menu.svg"
+            alt=""
+          />
+        </nav>
+      </header>
+      <div class="main-container">
+        <section class="menu">
+          <h3>About</h3>
+          <h3>Our Work</h3>
+          <h3>Partners</h3>
+          <h3>Annual Report</h3>
+          <h3>Donate</h3>
+        </section>
+        <section class="hero">
+          <h2>A classroom for every child.</h2>
+          <p>
+            We fund the schools, train the teachers, and measure what works — so
+            every child we reach today becomes a graduate tomorrow.
+          </p>
+        </section>
+        <main class="stats">
+          <div class="card-container">
+            <div class="card-header">
+              <img src="assets/images/icon-sparkle.svg" alt="" />
+              <h2>2.4M</h2>
+            </div>
+
+            <p>Students reached <span>Across 31 countries since 2011.</span></p>
+          </div>
+          <div class="card-container">
+            <div class="card-header">
+              <img src="assets/images/icon-plus.svg" alt="" />
+              <h2>1,284</h2>
+            </div>
+            <p>
+              Schools partnered
+              <span>In 14 countries, from Kenya to Guatemala.</span>
+            </p>
+          </div>
+          <div class="card-container">
+            <div class="card-header">
+              <img src="assets/images/icon-arrow-right.svg" alt="" />
+              <h2>38K</h2>
+            </div>
+            <p>
+              Teachers trained
+              <span>Equipped with modern tools and methodology.</span>
+            </p>
+          </div>
+          <div class="card-container">
+            <div class="card-header">
+              <img src="assets/images/icon-trending-up.svg" alt="" />
+              <h2>3.1×</h2>
+            </div>
+            <p>
+              Graduation lift
+              <span>Partner schools outperform national averages 3x.</span>
+            </p>
+          </div>
+        </main>
+      </div>
+
+      <footer>
+        <p>© 2026 Bridge Collective</p>
+        <p>Registered charity 12345678</p>
+      </footer>
+    </div>
+
+    <script>
+      const menuButton = document.getElementById("menuButton");
+
+      menuButton.addEventListener("click", () => {
+        menuButton.getAttribute("state") === "menu"
+          ? menuButton.setAttribute("state", "cross")
+          : menuButton.setAttribute("state", "menu");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --blue-200: hsl(224, 100%, 95%);
+  --blue-400: hsl(220, 100%, 64%);
+  --blue-600: hsl(228, 100%, 60%);
+  --blue-700: hsl(228, 99%, 58%);
+  --black: hsl(0, 0%, 0%);
+}
+
+@font-face {
+  font-family: Inter;
+  src: url("./assets/fonts/inter/inter-variable.ttf");
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: Inter;
+}
+
+body {
+  background-color: var(--blue-700);
+}
+
+hr {
+  border-bottom: 1px solid var(--blue-400);
+}
+
+.container header nav {
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--blue-400);
+}
+
+.container header nav .dot {
+  height: 0.7rem;
+  width: 0.7rem;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: inline-block;
+  margin-inline-end: 4px;
+}
+
+.container header nav h3 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.container header nav img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.container header nav img[state="cross"] {
+  content: url("/assets/images/icon-close.svg");
+}
+
+.container .main-container .hero {
+  padding: 60px 40px;
+  color: var(--white);
+  border-bottom: 1px solid var(--blue-400);
+}
+
+.container .main-container .hero h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-block-end: 24px;
+}
+
+.container .main-container .hero p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: var(--blue-200);
+}
+
+.container .menu {
+  display: none;
+  padding: 40px 0;
+  line-height: 1.8;
+  border-bottom: 1px solid var(--blue-400);
+}
+
+.container .menu h3 {
+  color: var(--white);
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.container .stats .card-container {
+  height: 400px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--blue-400);
+}
+
+.container .stats .card-container .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .stats .card-container img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.container .stats .card-container h2 {
+  color: var(--white);
+  font-family: default;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.container .stats .card-container p {
+  margin-block-start: auto;
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.container .stats .card-container p span {
+  display: block;
+  color: var(--blue-200);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container footer {
+  padding: 28px;
+}
+
+.container footer p {
+  color: var(--blue-200);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.container:has(header nav img[state="cross"]) .card-container {
+  filter: brightness(0.7);
+  background-color: var(--blue-700);
+}
+
+.container:has(header nav img[state="cross"]) .hero {
+  display: none;
+}
+
+.container:has(header nav img[state="cross"]) .menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (min-width: 70rem) {
+  .main-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+  }
+  .main-container .hero {
+    border-right: 1px solid var(--blue-400);
+  }
+
+  .main-container .stats {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .main-container .stats .card-container {
+    border-right: 1px solid var(--blue-400);
+  }
+
+  .main-container .stats .card-container:hover {
+    background-color: var(--blue-600);
+  }
+
+  .container footer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .container:has(header nav img[state="cross"]) .card-container,
+  .container:has(header nav img[state="cross"]) .hero {
+    filter: brightness(0.7);
+    background-color: var(--blue-700);
+  }
+
+  .container:has(header nav img[state="cross"]) .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    width: 30%;
+    height: 100%;
+    padding: 40px 0;
+    background-color: var(--blue-700);
+    border-bottom: 1px solid var(--blue-400);
+    z-index: 100;
+  }
+
+  .container:has(header nav img[state="cross"]) .hero {
+    display: block;
+  }
+
+  .menu h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
